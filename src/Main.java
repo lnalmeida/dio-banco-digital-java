@@ -7,8 +7,9 @@ import com.dio.appbank.models.abstracts.Conta;
 public class Main {
     public static void main(String[] args) {
         Cliente luiz = new Cliente("Luiz", "063.465.987.63");
+        Cliente renato = new Cliente("Renato", "125.536.485-98");
         Conta corrente = new ContaCorrente(luiz,TipoConta.CORRENTE);
-        Conta poupanca = new ContaPoupanca(luiz,TipoConta.POUPANCA);
+        Conta poupanca = new ContaPoupanca(renato,TipoConta.POUPANCA);
 
         corrente.imprimirExtrato();
         poupanca.imprimirExtrato();

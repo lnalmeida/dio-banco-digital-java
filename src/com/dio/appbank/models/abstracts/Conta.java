@@ -2,17 +2,23 @@ package com.dio.appbank.models.abstracts;
 
 import com.dio.appbank.enums.TipoConta;
 import com.dio.appbank.models.Cliente;
+import lombok.Getter;
 
 import java.util.Random;
+
 
 public abstract class Conta implements IConta {
     
     private final int CONTA_PADRAO = 1;
 
+    @Getter
     protected TipoConta tipoConta;
     protected Cliente cliente;
+    @Getter
     protected  int agencia;
+    @Getter
     protected final String numeroConta;
+    @Getter
     protected double saldo;
 
     public Conta(Cliente cliente) {
@@ -20,22 +26,6 @@ public abstract class Conta implements IConta {
         this.numeroConta = gerarNumeroConta();
         this.saldo = 0;
         this.cliente = cliente;
-    }
-
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public String getNumeroConta() {
-        return numeroConta;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public TipoConta getTipoConta() {
-        return tipoConta;
     }
 
     protected static String gerarNumeroConta() {
